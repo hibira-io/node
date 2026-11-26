@@ -1,0 +1,62 @@
+{
+  "name": "@hibira-io/node",
+  "version": "0.1.0",
+  "description": "Hibira server SDK for Node.js: Chat API, Live Chat verified visitors (Express, Fastify, Koa) and Hibira Approvals, with no dependencies",
+  "keywords": [
+    "hibira",
+    "pusher",
+    "chat",
+    "chat-api",
+    "live-chat",
+    "approvals",
+    "human-in-the-loop",
+    "express",
+    "fastify",
+    "koa",
+    "realtime",
+    "websocket"
+  ],
+  "homepage": "https://hibira.io",
+  "bugs": {
+    "url": "https://github.com/hibira-io/node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hibira-io/node.git"
+  },
+  "license": "MIT",
+  "author": "Hibira (https://hibira.io)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "pretest": "rm -rf build && tsc -p tsconfig.test.json",
+    "test": "node --test build/test/*.test.js",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
